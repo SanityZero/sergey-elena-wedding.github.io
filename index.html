@@ -533,21 +533,21 @@ form.addEventListener('submit',async function(e){
    msg.textContent='';
 
    // простая валидация
-   if(!form.name.value.trim()){showErr('Пожалуйста, укажите имя.');return;}
+   if(!form.elements.name.value.trim()){showErr('Пожалуйста, укажите имя.');return;}
 
    if(!form.querySelector('input[name="attend"]:checked')){showErr('Пожалуйста, отметьте, придёте ли вы.');return;}
    if(ENDPOINT.includes('ВАШ_КОД')){showErr('Форма ещё не подключена к почте. Настройте endpoint (см. инструкцию).');return;}
 
    // сбор данных
    const data={
-     name:form.name.value.trim(),
+     name:form.elements.name.value.trim(),
      attend:form.querySelector('input[name="attend"]:checked').value,
 
 menu:(form.querySelector('input[name="menu"]:checked')||{}).value||'—',
 
 drinks:[...form.querySelectorAll('input[name="drinks"]:checked')].map(x=>x.value).join(', ')||'—',
-     music:form.music.value.trim()||'—',
-     comment:form.comment.value.trim()||'—'
+     music:form.elements.music.value.trim()||'—',
+     comment:form.elements.comment.value.trim()||'—'
    };
 
    btn.disabled=true;btn.textContent='Отправляем…';
