@@ -212,6 +212,14 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;
    }
    .ph:hover{transform:scale(1.02)}
    .ph .ico{font-size:30px;margin-bottom:10px;opacity:.7}
+   .photo{
+     aspect-ratio:3/4;border-radius:16px;overflow:hidden;
+     background:var(--silver);
+     box-shadow:0 10px 30px rgba(15,36,68,.12);
+     transition:transform .3s;
+   }
+   .photo img{width:100%;height:100%;object-fit:cover;display:block}
+   .photo:hover{transform:scale(1.02)}
 
    /* ---------- ФОРМА ---------- */
    .rsvp-card{
@@ -388,13 +396,12 @@ class="cd-label">секунд</div></div>
 
 <!-- ===== ФОТО ===== -->
 <section class="center">
-   <h2 class="section-title">Наши фотографии</h2>
-   <div class="section-sub">скоро здесь будут ваши снимки</div>
-   <div class="gallery">
-     <div class="ph"><div class="ico">❄</div>Фото скоро</div>
-     <div class="ph"><div class="ico">✦</div>Фото скоро</div>
-     <div class="ph"><div class="ico">❄</div>Фото скоро</div>
-   </div>
+    <h2 class="section-title">Наши фотографии</h2>
+    <div class="section-sub">наши счастливые моменты</div>
+    <div class="gallery">
+      <figure class="photo"><img src="1000019161.jpg" alt="Сергей и Елена — фото 1" loading="lazy"></figure>
+      <figure class="photo"><img src="1000019168.jpg" alt="Сергей и Елена — фото 2" loading="lazy"></figure>
+    </div>
 </section>
 
 <!-- ===== RSVP ===== -->
